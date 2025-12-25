@@ -21,17 +21,17 @@ const Navbar = () => {
     { href: "/courses", label: "کۆرسەکان" },
     { href: "/services", label: "خزمەتگوزاریەکان" },
     { href: "/tools", label: "ئامرازەکان" },
+    { href: "/about", label: "دەربارەمان" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav
-      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${isScrolled
           ? "bg-card/95 backdrop-blur-xl shadow-lg border-b border-border/50"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -49,11 +49,10 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`relative text-base font-medium transition-all duration-300 hover:text-primary ${
-                  isActive(link.href)
+                className={`relative text-base font-medium transition-all duration-300 hover:text-primary ${isActive(link.href)
                     ? "text-primary"
                     : "text-muted-foreground"
-                }`}
+                  }`}
               >
                 {link.label}
                 {isActive(link.href) && (
@@ -97,9 +96,8 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`text-lg font-medium py-2 transition-colors ${
-                  isActive(link.href) ? "text-primary" : "text-muted-foreground"
-                }`}
+                className={`text-lg font-medium py-2 transition-colors ${isActive(link.href) ? "text-primary" : "text-muted-foreground"
+                  }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
